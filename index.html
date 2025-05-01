@@ -96,10 +96,10 @@
 </section>
 
 <script>
-  const eventDate = new Date(2025, 6, 4, 19, 0, 0); // Июль — месяц 6 (от 0)
+  const eventDate = new Date("2025-07-04T19:00:00"); // ISO формат — надёжный
   function updateCountdown() {
     const now = new Date().getTime();
-    const distance = eventDate - now;
+    const distance = eventDate.getTime() - now;
 
     if (distance < 0) {
       document.getElementById("timer").innerText = "Іс-шара басталды!";
@@ -115,8 +115,8 @@
       ${days} күн ${hours} сағат ${minutes} минут ${seconds} секунд;
   }
 
-  updateCountdown(); // сразу показать
-  setInterval(updateCountdown, 1000); // обновлять каждую секунду
+  updateCountdown(); // сразу
+  setInterval(updateCountdown, 1000); // каждую секунду
 </script>
 
 </body>
